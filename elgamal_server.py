@@ -1,4 +1,5 @@
 import socket 
+
 p = 17
 g = 10
 x = 5 

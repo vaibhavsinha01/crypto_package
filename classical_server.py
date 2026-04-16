@@ -1,5 +1,4 @@
 import socket
-import math
 
 def gcd(a, b):
     while b:

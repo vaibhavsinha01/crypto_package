@@ -1,5 +1,6 @@
 import socket 
 import random 
+
 p = 23
 q = 11
 g = 2
@@ -29,6 +30,5 @@ r = (pow(g,k,p))%q
 s1 = (inv(k,q)*(H+x*r))%q
 
 c.send(f"{r},{s1}".encode())
-
 c.close()
 s.close()

@@ -1,7 +1,5 @@
 import socket
 
-# ---------------- CIPHERS ----------------
-
 def caesar_encrypt(text, k):
     return ''.join(chr((ord(c) - 65 + k) % 26 + 65) if c.isalpha() else c for c in text)
 
@@ -38,9 +36,6 @@ def rail_encrypt(text, rails):
 
 def affine_encrypt(text, a, b):
     return ''.join(chr((a * (ord(c) - 65) + b) % 26 + 65) for c in text)
-
-
-# ---------------- CLIENT ----------------
 
 print("""
 1. Caesar Cipher

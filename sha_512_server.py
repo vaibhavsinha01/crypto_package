@@ -6,25 +6,19 @@ def rotr(x, n):
 def sha512(message):
     msg = bytearray(message.encode())
     length = len(msg) * 8
-
     msg.append(0x80)
     while (len(msg) % 128) != 112:
         msg.append(0)
-
     msg += length.to_bytes(16, 'big')
-
-    # Initial hash values
     H = [
         0x6a09e667f3bcc908, 0xbb67ae8584caa73b,
         0x3c6ef372fe94f82b, 0xa54ff53a5f1d36f1,
         0x510e527fade682d1, 0x9b05688c2b3e6c1f,
         0x1f83d9abfb41bd6b, 0x5be0cd19137e2179
     ]
-
-    # Constants (first few for simplicity)
     K = [
         0x428a2f98d728ae22, 0x7137449123ef65cd
-    ] * 40  # repeated for simplicity
+    ] * 40  
 
     for i in range(0, len(msg), 128):
         w = [0]*80
@@ -55,13 +49,11 @@ def sha512(message):
 
     return ''.join(format(x, '016x') for x in H)
 
-
-# Socket server
 server = socket.socket()
 server.bind(("localhost", 12347))
 server.listen(1)
 
-print("SHA-512 Server running...")
+print("sha-512 Server running...")
 
 conn, addr = server.accept()
 data = conn.recv(1024).decode()

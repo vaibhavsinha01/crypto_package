@@ -46,8 +46,8 @@ def encrypt(plain, key):
     bits = fk(bits[4:] + bits[:4], k2)
     return permute(bits, IP_INV)
 
-plaintext = input("Enter 8-bit plaintext: ")
-key = input("Enter 10-bit key: ")
+plaintext = input("enter 8-bit plaintext: ")
+key = input("enter 10-bit key: ")
 
 cipher = encrypt(plaintext, key)
 print("Encrypted:", cipher)
