@@ -8,11 +8,9 @@ def gcd(a, b):
 def caesar_decrypt(text, k):
     return ''.join(chr((ord(c) - 65 - k) % 26 + 65) if c.isalpha() else c for c in text)
 
-
 def mono_decrypt(text, key):
     rev = {key[i]: chr(65 + i) for i in range(26)}
     return ''.join(rev.get(c, c) for c in text)
-
 
 def vigenere_decrypt(text, key):
     res = ""

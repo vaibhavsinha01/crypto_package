@@ -88,8 +88,8 @@ def text_to_bits(text):
 def bits_to_text(bits):
     return ''.join(chr(int(bits[i:i+8], 2)) for i in range(0, len(bits), 8))
 
-key_input = input("Enter 64-bit key (as 8 ASCII chars): ")
-plain_input = input("Enter 64-bit plaintext (as 8 ASCII chars): ")
+key_input = input("Enter 64-bit key as 8 ASCII chars: ")
+plain_input = input("Enter 64-bit plaintext as 8 ASCII chars: ")
 
 key_bits = text_to_bits(key_input)
 plain_bits = text_to_bits(plain_input)
@@ -97,7 +97,7 @@ plain_bits = text_to_bits(plain_input)
 cipher_bits = encrypt(plain_bits, key_bits)
 cipher_text = bits_to_text(cipher_bits)
 
-print("Encrypted (bits):", cipher_bits)
+print("encrypted bits:", cipher_bits)
 
 client = socket.socket()
 client.connect(("localhost", 4444))
