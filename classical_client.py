@@ -6,14 +6,12 @@ def caesar_encrypt(text, k):
 def mono_encrypt(text, key):
     return ''.join(key[ord(c) - 65] for c in text)
 
-
 def vigenere_encrypt(text, key):
     key = key.upper()
     return ''.join(
         chr((ord(c) - 65 + (ord(key[i % len(key)]) - 65)) % 26 + 65)
         for i, c in enumerate(text)
     )
-
 
 def rail_encrypt(text, rails):
     rail = [[] for _ in range(rails)]
@@ -30,9 +28,7 @@ def rail_encrypt(text, rails):
             direction = -1
 
         r += direction
-
     return ''.join(sum(rail, []))
-
 
 def affine_encrypt(text, a, b):
     return ''.join(chr((a * (ord(c) - 65) + b) % 26 + 65) for c in text)

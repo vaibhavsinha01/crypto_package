@@ -21,9 +21,7 @@ def vigenere_decrypt(text, key):
             res += chr((ord(c) - 65 - (ord(key[i % len(key)]) - 65)) % 26 + 65)
         else:
             res += c
-
     return res
-
 
 def rail_decrypt(cipher, rails):
     n = len(cipher)
@@ -65,7 +63,6 @@ def rail_decrypt(cipher, rails):
         r += direction
 
     return res
-
 
 def affine_decrypt(text, a, b):
     a_inv = None
